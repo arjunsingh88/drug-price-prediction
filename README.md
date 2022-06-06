@@ -1,4 +1,4 @@
-price_prediction
+Drugs Price Prediction
 ==============================
 
 The project entails an indepth isight into indicators responsible for drug prices in pharmaceutical industry. On top of that we build a ML model to predict drug prices bases on available indicators.
@@ -120,4 +120,3 @@ This file is here to help you and provide some feature engineering on the drug l
     4. Hyperparameter tuning: It can be even more exhaustive, for the said use case I explored grid search, but we have other options such as Randomized search as well as Bayesian search.
     5. Model Building: Designing more complex model to identify the user based on the keystroke value implemented
     6. Future research: Deep Learning techniques like Deep Neural Network can be a potential to explore and find the implementation for our problem as they learn from data and can help improve upon to minimize loss and find the best features for our model.
-
