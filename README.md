@@ -72,22 +72,18 @@ This file is here to help you and provide some feature engineering on the drug l
 
 1. Instructions on how to run your code.</br>
    OPTION 1:
-   step 1. Execute the price_predict.sh bash script. once excecuted, it will run the final.py and train_model script.py script
+   step 1. Execute the price_predict.py python script. once excecuted, it will run the environment.py, final.py and train_model script.py script
    OPTION 2:
    incase option 1 does not work(tested only on mac systems) 
    Try pip install -r requirements.txt
    and try Option 1 again
-   Option 3:
-   Step 1. open the directory price_prediction in VS Code or any IDE
-   Step 2. pip install -r requirements.txt
-   Step 3. run the final.py script
-   Step 4. run the train_model.py script
-
-   final.py script carries two step 1. Data Preprocessing(make_dataset.py) step 2. Feature engineering(build_features.py)
-   The results of final.py i.e. cleaned_train, cleaned_test, cleaned_features files are generated in data/preprocessed/ dir
-   After few seconds of delay the model file train_model.py is executed
-   once executed, it will read the processed data from data/preprocessed/ directory
-   then it will seek user input to execute the cases
+   
+   Additional Info: 
+    - final.py script carries two step 1. Data Preprocessing(make_dataset.py) step 2. Feature engineering(build_features.py)
+    - The results of final.py i.e. cleaned_train, cleaned_test, cleaned_features files are generated in data/preprocessed/ dir
+    - After few seconds of delay the model file train_model.py is executed
+   
+   once executed, it will read the processed data from data/preprocessed/ directory. Then it will seek user input to execute the cases
    case 1. this case involves training model(parameters are tuned in jupyter notebook) on entire training dataset and applied to test data, the result being mean adjusted R2 with +/- standard deviation
    case 2. This particular case is to split train data into train and test and then build and execute model for this data
 
@@ -96,14 +92,14 @@ This file is here to help you and provide some feature engineering on the drug l
    For the problem of pricing prediction, i have used ensemble learning, that aggregates the results of all the tries we do on our data.
    Ensemble learning is the process by which multiple models, such as classifiers or experts, are strategically generated and combined to solve a particular computational intelligence problem. Ensemble learning is primarily used to improve the (classification, prediction, function approximation, etc.) performance of a model, or reduce the likelihood of an unfortunate selection of a poor one. Other applications of ensemble learning include assigning a confidence to the decision made by the model, selecting optimal (or near optimal) features, data fusion, incremental learning, nonstationary learning and error-correcting.
 
-    1. Random Forest
+        1. Random Forest
 
   Random Forest is an ensembling method and one of the most popular and powerful algorithm in Machine Learning.
   The random forest is a model made up of many decision trees. Rather than just simply averaging the prediction of trees (which we could call a “forest”), this model uses two key concepts that gives it the name random:
      1. Random sampling of training data points when building trees
      2. Random subsets of features considered when splitting nodes.
 
-    2. Gradient Boosting
+        2. Gradient Boosting
 
    Gradient boosting is a machine learning boosting type. It strongly relies on the prediction that the next model will reduce prediction errors when blended with previous ones. The main idea is to establish target outcomes for this upcoming model to minimize errors.So every case’s outcome depends on the number of changes brought upon by the prediction and its effects on the prediction error.
      1. If the prediction has a small change and causes a significant error drop, then the case’s expected target outcome will have a high value. Forecasts provided by new models could reduce the errors as long as they are near their targets.
