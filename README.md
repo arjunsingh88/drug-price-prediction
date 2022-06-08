@@ -16,7 +16,7 @@ Project Organization
     │   ├── raw            <- The original, immutable data dump. drug_train, drug_test, drug_label_feature_eng
     │   └── predictions    <- The final result in submission.csv
     │
-    ├── notebooks          <- Jupyter notebooks. test.ipynb
+    ├── notebooks          <- Jupyter notebooks. test_logic.ipynb (All the inital research & experiemntation is here)
     │
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
