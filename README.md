@@ -90,14 +90,14 @@ This file is here to help you and provide some feature engineering on the drug l
       - python3 src/final.py
       - python3 src/models/train_model.py
     - `OPTION 2`: Incase option 1 does not work(tested only on mac systems). Try pip install -r requirements.txt and try Option 1 again
-   
-   `Additional Info:` 
+
+   `Additional Info:`
     - final.py script carries two step 1. Data Preprocessing(make_dataset.py) step 2. Feature engineering(build_features.py)
     - The results of final.py i.e. cleaned_train, cleaned_test, cleaned_features files are generated in data/preprocessed/ dir
     - After few seconds of delay the model file train_model.py is executed
-   
+
    once executed, it will read the processed data from data/preprocessed/ directory. Then it will seek user input to execute the cases:
-    - `case 1`. this case involves training model(parameters are tuned in jupyter notebook) on entire training dataset and applied to test data, the result being mean adjusted R2 with +/- standard deviation and stored in data/predictions as submission.csv 
+    - `case 1`. this case involves training model(parameters are tuned in jupyter notebook) on entire training dataset and applied to test data, the result being mean adjusted R2 with +/- standard deviation and stored in data/predictions as submission.csv
     - `case 2`. This particular case is to split train data into train and test and then build and execute model for this data
 
 2. The selection of model is purely instinct and intuition based backed by research and experience.
@@ -106,21 +106,20 @@ This file is here to help you and provide some feature engineering on the drug l
   
     | Algorithm | Description |
     | --- | --- |
-    | Random Forest | Random Forest is an ensembling method and one of the most popular and powerful algorithm in Machine Learning. The random forest is a model made up of many decision trees. Rather than just simply averaging the prediction of trees (which we could call a “forest”), this model uses two key concepts that gives it the name random:<br>- 1. Random sampling of training data points when building trees<br>- 2. Random subsets of features considered when splitting nodes.</p> </details> | 
-    | Gradient Boosting | Gradient boosting is a machine learning boosting type. It strongly relies on the prediction that the next model will reduce prediction errors when blended with previous ones. The main idea is to establish target outcomes for this upcoming model to minimize errors.So every case’s outcome depends on the number of changes brought upon by the prediction and its effects on the prediction error.<br>- 1. If the prediction has a small change and causes a significant error drop, then the case’s expected target outcome will have a high value. Forecasts provided by new models could reduce the errors as long as they are near their targets.<br>- 2. If there are no error changes caused by a small prediction change, then the case’s next outcome will be zero. You cannot minimize the error by changing the prediction.</p> </details>  |
-
+    | Random Forest | Random Forest is an ensembling method and one of the most popular and powerful algorithm in Machine Learning. The random forest is a model made up of many decision trees. Rather than just simply averaging the prediction of trees (which we could call a “forest”), this model uses two key concepts that gives it the name random:<br>1. Random sampling of training data points when building trees<br>2. Random subsets of features considered when splitting nodes.</p> </details> |
+    | Gradient Boosting | Gradient boosting is a machine learning boosting type. It strongly relies on the prediction that the next model will reduce prediction errors when blended with previous ones. The main idea is to establish target outcomes for this upcoming model to minimize errors.So every case’s outcome depends on the number of changes brought upon by the prediction and its effects on the prediction error.<br>1. If the prediction has a small change and causes a significant error drop, then the case’s expected target outcome will have a high value. Forecasts provided by new models could reduce the errors as long as they are near their targets.<br>2. If there are no error changes caused by a small prediction change, then the case’s next outcome will be zero. You cannot minimize the error by changing the prediction.</p> </details>  |
 
 3. Overall performance of your algorithm(s).
   The algorithm in research performed excellent, powered by detailed feature engineering
     | Algorithm | CV Results | Hypertune Experiments | Hypertuned results |
     | --- | --- | --- | --- |
-    | Gradient Boosting | Adjusted R2_score = 0.81 (+/- 0.03) | <img width="1119" alt="Gradient Boosting HiPlot" src="https://user-images.githubusercontent.com/45566835/172601913-a70d5946-f3d7-4630-b885-61217af0aa1f.png"> | **0.83** |
-    | Random Forest | Adjusted R2_score = 0.78 (+/- 0.03) | <img width="1124" alt="Random Forest HiPlot" src="https://user-images.githubusercontent.com/45566835/172601970-b036ff97-0561-4594-9879-f9e53482f9f1.png"> | **0.81** |
+    | **`Gradient Boosting`** | Adjusted R2_score = 0.81 (+/- 0.03) | <img width="1119" alt="Gradient Boosting HiPlot" src="https://user-images.githubusercontent.com/45566835/172601913-a70d5946-f3d7-4630-b885-61217af0aa1f.png"> | **0.83** |
+    | **`Random Forest`** | Adjusted R2_score = 0.78 (+/- 0.03) | <img width="1124" alt="Random Forest HiPlot" src="https://user-images.githubusercontent.com/45566835/172601970-b036ff97-0561-4594-9879-f9e53482f9f1.png"> | **0.81** |
 
 4. Next steps and potential improvements.
     1. In Data preprocessing and understanding we can introduce the outlier/anomaly detection algorithm to study and filter the records which can bring down our models' accuracy.
     2. Feature engineering: Ideating additional features based on the understanding of pharmaceutical industry. For example, we have market authorization and market declaration date and there could be a potential for new feature
-    3. Feature selection: Use of more high-level feature selection method, wrapper methods are more exhaustive but computationally expensive and time consuming. A small research study has been carried out using VIF i.e Variance inflation factor to find the features with VIF less than 5. Higher the value, a VIF above 10 indicates high correlation and is cause for concern but for better modeling anything above 2.5 requires attention. 
+    3. Feature selection: Use of more high-level feature selection method, wrapper methods are more exhaustive but computationally expensive and time consuming. A small research study has been carried out using VIF i.e Variance inflation factor to find the features with VIF less than 5. Higher the value, a VIF above 10 indicates high correlation and is cause for concern but for better modeling anything above 2.5 requires attention.
     4. Hyperparameter tuning: It can be even more exhaustive, for the said use case I explored grid search, but we have other options such as Randomized search as well as Bayesian search.
     5. Model Building: Designing more complex model to identify the user based on the keystroke value implemented
     6. Future research: Deep Learning techniques like Deep Neural Network can be a potential to explore and find the implementation for our problem as they learn from data and can help improve upon to minimize loss and find the best features for our model.
