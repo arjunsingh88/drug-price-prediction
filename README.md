@@ -112,10 +112,10 @@ This file is here to help you and provide some feature engineering on the drug l
 
 3. Overall performance of your algorithm(s).
   The algorithm in research performed excellent, powered by detailed feature engineering
-    | Algorithm | Results | Hypertuned results |
-    | --- | --- | --- |
-    | Gradient Boosting | Adjusted R2_score = 0.81 (+/- 0.03) | 0.83 |
-    | Random Forest | Adjusted R2_score = 0.78 (+/- 0.03) | 0.81 |
+    | Algorithm | CV Results | Hypertune Experiments | Hypertuned results |
+    | --- | --- | --- | --- |
+    | Gradient Boosting | Adjusted R2_score = 0.81 (+/- 0.03) | <img width="1119" alt="Gradient Boosting HiPlot" src="https://user-images.githubusercontent.com/45566835/172601913-a70d5946-f3d7-4630-b885-61217af0aa1f.png"> | **0.83** |
+    | Random Forest | Adjusted R2_score = 0.78 (+/- 0.03) | <img width="1124" alt="Random Forest HiPlot" src="https://user-images.githubusercontent.com/45566835/172601970-b036ff97-0561-4594-9879-f9e53482f9f1.png"> | **0.81** |
 
 4. Next steps and potential improvements.
     1. In Data preprocessing and understanding we can introduce the outlier/anomaly detection algorithm to study and filter the records which can bring down our models' accuracy.
