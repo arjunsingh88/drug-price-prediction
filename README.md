@@ -101,8 +101,7 @@ This file is here to help you and provide some feature engineering on the drug l
     - `case 2`. This particular case is to split train data into train and test and then build and execute model for this data
 
 2. The selection of model is purely instinct and intuition based backed by research and experience.
-   For the problem of pricing prediction, i have used ensemble learning, that aggregates the results of all the tries we do on our data.
-   
+   For the problem of pricing prediction, i have used ensemble learning, that aggregates the results of all the tries we do on our data.<br>
    Ensemble learning is the process by which multiple models, such as classifiers or experts, are strategically generated and combined to solve a particular computational intelligence problem. Ensemble learning is primarily used to improve the (classification, prediction, function approximation, etc.) performance of a model, or reduce the likelihood of an unfortunate selection of a poor one. Other applications of ensemble learning include assigning a confidence to the decision made by the model, selecting optimal (or near optimal) features, data fusion, incremental learning, nonstationary learning and error-correcting.
   
     | Algorithm | Description |
