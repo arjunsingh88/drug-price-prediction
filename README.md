@@ -83,7 +83,12 @@ This file is here to help you and provide some feature engineering on the drug l
 **Note:** This data has duplicate records and some descriptions in `drugs_train.csv` or `drugs_test.csv` might not be present in this file.
 
 1. Instructions on how to run your code.</br>
-    - OPTION 1: Execute the price_predict.py python script. once excecuted, it will run the environment.py, final.py and train_model script.py script
+    - OPTION 1: Execute the price_predict.py python script. once excecuted, it will run the the following
+      - python3 src/config/environment.py
+      - pip install -e .
+      - pip list
+      - python3 src/final.py
+      - python3 src/models/train_model.py
     - OPTION 2: Incase option 1 does not work(tested only on mac systems). Try pip install -r requirements.txt and try Option 1 again
    
    Additional Info: 

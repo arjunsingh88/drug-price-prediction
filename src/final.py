@@ -18,29 +18,29 @@ import unidecode
 from data.make_dataset import preprocessing
 from features.build_features import feature_engineering
 
-class environment:
-    def change_dir():
-        """
-        Change the working directory to the folder where the script is located
-        """
-        file_dir =abspath(getsourcefile(lambda:0))
-        # This is a way to get the path of the parent directory 0 means immediate and 1 is its super.
-        goal_dir = Path(file_dir).parents[1]
-        # change the current working directory to the parent directory
-        os.chdir(goal_dir)
+# class environment:
+#     def change_dir():
+#         """
+#         Change the working directory to the folder where the script is located
+#         """
+#         file_dir =abspath(getsourcefile(lambda:0))
+#         # This is a way to get the path of the parent directory 0 means immediate and 1 is its super.
+#         goal_dir = Path(file_dir).parents[1]
+#         # change the current working directory to the parent directory
+#         os.chdir(goal_dir)
 
-    def environment_call():
-        try: 
-            #os.system('python3 -m venv price_predict_env')
-            #print("I am here")
-            os.system('source price_predict_env/bin/activate') 
-            #os.system('pip install -r requirements.txt')
-        except:
-            print('Enviroment not set up')
-            print('Setting up the Environment')
-            os.system('python3 -m venv price_predict_env')
-            os.system('source price_predict_env/bin/activate') 
-            os.system('pip install -r requirements.txt')
+#     def environment_call():
+#         try: 
+#             #os.system('python3 -m venv price_predict_env')
+#             #print("I am here")
+#             os.system('source price_predict_env/bin/activate') 
+#             #os.system('pip install -r requirements.txt')
+#         except:
+#             print('Enviroment not set up')
+#             print('Setting up the Environment')
+#             os.system('python3 -m venv price_predict_env')
+#             os.system('source price_predict_env/bin/activate') 
+#             os.system('pip install -r requirements.txt')
 
 
 
@@ -146,9 +146,9 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format=log_fmt)
 
     #Lets first configure the environemnt
-# This is a way to change the working directory to the folder where the script is located.
-    environment.change_dir()
-    environment.environment_call()
+    # This is a way to change the working directory to the folder where the script is located.
+    #environment.change_dir()
+    #environment.environment_call()
 
     # not used in this stub but often useful for finding various files
 
