@@ -27,7 +27,7 @@ def main():
     logger.info('making final data set from raw data')
 
     # Lets read the data available in the raw folder
-    #columns_to_skip = 'drug_id'
+    # option to skip column if the column is just a fancy index in disguise
     columns_to_skip = ' '
     # This is a way to read the data from the csv file and skip the columns that are not needed.
     df_train_data = pd.read_csv('data/raw/drugs_train.csv',usecols=lambda x: x not in columns_to_skip)
