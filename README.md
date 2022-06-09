@@ -25,9 +25,12 @@ Project Organization
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
-    │   ├── final.py       <- Combines both make dataset and feature engineering scripts for the cleaned and prepared data for ML modeling
+    │
+    ├── final              
+    │   ├── __init__.py    <- Source code for use in this project.
+    │   ├── final.py       <- Combines both make dataset and feature engineering scripts for the cleaned and prepared data for ML modeling  
     │   │
-    │   ├── config           <- Scripts to identify platform(linux, mac, window), create/verify virtual environment, activate environment
+    │   ├── config         <- Scripts to identify platform(linux, mac, window), create/verify virtual environment, activate environment
     │   │   └── environment.py
     │   │    
     │   ├── data           <- Scripts to download or generate data
@@ -36,10 +39,9 @@ Project Organization
     │   ├── features       <- Scripts to turn raw data into features for modeling
     │   │   └── build_features.py
     │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   ├── models         
+    │   │   ├── predict_model.py <- Future script to integrate with web form to recieve user input and predict the price of drug
+    │   │   └── train_model.py  <- Scripts to train models and then use trained models to make predictions                
     │    
     ├── setup.py           <- Script to setup the entire list of library as a package
     │    
@@ -48,7 +50,6 @@ Project Organization
     │                      2. pip install -e (standard package install)
     │                      3. final.py
     │                      4. train_model.py
-    │
 -------
 
 Filenames: `drugs_train.csv` and `drugs_test.csv`
@@ -84,8 +85,9 @@ This file is here to help you and provide some feature engineering on the drug l
 
 1. Instructions on how to run your code.</br>
     - `OPTION 1`: Execute the price_predict.py python script. once excecuted, it will run the the following
+      - python3 -m pip install --upgrade pip 
       - python3 src/config/environment.py
-      - pip install -e .
+      - pip install .
       - pip list
       - python3 src/final.py
       - python3 src/models/train_model.py
