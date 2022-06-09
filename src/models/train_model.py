@@ -18,31 +18,6 @@ import warnings
 import pandas as pd
 import numpy as np
 
-# class environment:
-#     def change_dir():
-#         """
-#         Change the working directory to the folder where the script is located
-#         """
-#         file_dir =abspath(getsourcefile(lambda:0))
-#         # This is a way to get the path of the parent directory 0 means immediate and 1 is its super.
-#         goal_dir = Path(file_dir).parents[2]
-#         # change the current working directory to the parent directory
-#         os.chdir(goal_dir)
-
-#     def environment_call():
-#         try: 
-#             #print("I am here")
-#             #os.system('python3 -m venv price_predict_env')
-#             os.system('source price_predict_env/bin/activate') 
-#             #os.system('pip install -r requirements.txt')
-
-#         except:
-#             print('Enviroment not set up')
-#             print('Setting up the Environment')
-#             os.system('python3 -m venv price_predict_env')
-#             os.system('source price_predict_env/bin/activate') 
-#             os.system('pip install -r requirements.txt')
-
 
 class Model:
     
@@ -126,9 +101,6 @@ class Model:
 
         
 if __name__ == '__main__':
-
-    #environment.change_dir()
-    #environment.environment_call()
 
     df_train = pd.read_csv("data/processed/cleaned_train.csv", sep = ',' , header = 0)
     df_test = pd.read_csv("data/processed/cleaned_test.csv", sep = ',' , header = 0)
