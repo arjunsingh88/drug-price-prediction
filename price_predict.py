@@ -15,4 +15,4 @@ def change_dir():
 
 change_dir()
 #print(os.getcwd())
-os.system("python3 src/config/environment.py;pip install wheel;pip install -e .;pip list;python3 src/final/final.py; python3 src/models/train_model.py")
+os.system("python3 -m pip install --upgrade pip;python3 src/config/environment.py;pip install .;pip list;python3 src/final/final.py; python3 src/models/train_model.py")

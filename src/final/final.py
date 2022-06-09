@@ -15,8 +15,8 @@ from sklearn.compose import make_column_selector as selector
 from sklearn.pipeline import Pipeline
 import re
 import unidecode
-from data.make_dataset import preprocessing
-from features.build_features import feature_engineering
+from src.data.make_dataset import preprocessing
+from src.features.build_features import feature_engineering
 
 
 def main():
