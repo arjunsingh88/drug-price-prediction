@@ -22,6 +22,17 @@ import numpy as np
 class Model:
     
     def __init__(self, df, df_test, model_type = None):
+        """
+        The function takes in a dataframe, a target column, and a boolean value. If the boolean value is
+        False, the function will split the dataframe into a training set and a testing set. If the
+        boolean value is True, the function will split the dataframe into a training set, a testing set,
+        and a validation set
+        
+        :param df: This is the training data
+        :param df_test: This is the dataframe that you want to predict on
+        :param model_type: This is the type of model that you want to use. You can choose between a
+        random forest model and a gradient boosting model
+        """
         self.df = df
         self.df_test = df_test
         
@@ -90,16 +101,13 @@ class Model:
         :param result: the predicted values
         :return: The score of the model.
         """
-        if testing == False:
+        if testing is False:
             scores = cross_val_score(self.user_model, self.X_train, self.y_train, scoring=Model.adj_r2 ,cv=5, n_jobs=-1 ,verbose=10)
             return scores
         else:
             #r2(self.y_test,result)
-            return  1 - ( 1- self.model.score(self.X_test, self.y_test) ) * ( len(self.y_test) - 1 ) / ( len(self.y_test) - self.X_test.shape[1] - 1 )
+            return  1 - ( 1- self.model.score(self.X_test, self.y_test) ) * ( len(self.y_test) - 1 ) / ( len(self.y_test) - self.X_test.shape[1] - 1 )        
 
-
-
-        
 if __name__ == '__main__':
 
     df_train = pd.read_csv("data/processed/cleaned_train.csv", sep = ',' , header = 0)
@@ -131,18 +139,15 @@ if __name__ == '__main__':
         #print our results
         
         try: 
-            if test == True:
+            if test is True:
                 print('The Adjusted R2 score of the model on the test data is: {:.2f} '.format(model_instance.score(result, testing = test)))
-            elif test == False:
+            else:
                 scores = model_instance.score(result, testing = test)
                 print("The Adjusted R2 score of the model on the training data is: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2)) 
                 final_results = pd.Series(np.round_(result, decimals = 2))
                 df_submission = pd.concat([df_test['drug_id'],final_results.rename('price') ], axis = 1)
                 print("Writing csv data of predicted values to the file")
                 df_submission.to_csv('data/predictions/submission.csv', sep = ',', index = False)
-                
-            else:
-                print('Check the option')
         except:
             print('Check the code')
         
